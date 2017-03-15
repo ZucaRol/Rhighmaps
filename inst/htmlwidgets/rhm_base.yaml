@@ -1,0 +1,25 @@
+dependencies:
+- name: exporting
+  version: 5.0.7
+  src: htmlwidgets
+  script: ./lib/code/modules/exporting.js
+- name: data
+  version: 5.0.7
+  src: htmlwidgets
+  script: ./lib/code/modules/data.js
+- name: highmaps
+  version: 5.0.7
+  src: htmlwidgets
+  script: ./lib/code/highmaps.js
+- name: query
+  version: 3.1.1
+  src: htmlwidgets
+  script: ./lib/jquery-3.1.1.min.js
+- name: world
+  version: 3.1.1
+  src: htmlwidgets
+  script: ./lib/mapdata/mex.js
+- name: rexporting
+  version: 0.0.1
+  src: htmlwidgets
+  script: ./lib/rjs/rexporting.js

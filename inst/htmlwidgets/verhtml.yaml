@@ -1,0 +1,5 @@
+dependencies:
+- name: rexporting
+  version: 0.0.1
+  src: htmlwidgets
+  script: ./lib/rjs/rexporting.js
