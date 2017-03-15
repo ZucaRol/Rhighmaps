@@ -4,8 +4,7 @@ Version: 0.0.0.9000
 Authors@R: person("Edson Rolando", "Tamayo", email = "rolando.tam.cas@gmail.com", role = c("aut", "cre"))
 Description: Crea mapas interactivos ligados a datos de R.
 Depends: R (>= 3.3.2),
-	htmlwidgets,
-	shiny
+	htmlwidgets
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
