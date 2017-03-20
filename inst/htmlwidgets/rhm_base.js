@@ -19,7 +19,7 @@ HTMLWidgets.widget({
 
 
     // Initiate the chart
-    Highcharts.mapChart(el, {
+    mapChart=Highcharts.mapChart(el, {
 
         title: {
             text: x.title
@@ -43,6 +43,7 @@ HTMLWidgets.widget({
             mapData: rmap,
             joinBy: [x.jscode, 'codeRHM'],
             keys: [x.jscode, 'value'],
+			allowPointSelect: true,
 			name: x.dataname,
             states: {
                 hover: {
@@ -58,7 +59,15 @@ HTMLWidgets.widget({
             }
         }]
     });
+	Highcharts.wrap(Highcharts.Point.prototype, 'select', function (proceed) {
 
+            proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+
+            var points = mapChart.getSelectedPoints();
+			console.log(points);
+			console.log(points[0].properties.state_name);
+			Shiny.onInputChange("mydata", points[0].properties.state_name);
+	});
 
       },
 
