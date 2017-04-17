@@ -4,10 +4,12 @@
 #'
 #' @import htmlwidgets
 #' @param mapjson Una lista organizada en una FeatureColection frecuentemente proveniente de un mapa "json".
-#' @param datos Un data.frame de dos columnas. En la primera de las cuales estó el código de homologación de los datos. 
+#' @param datos Un data.frame de dos columnas. En la primera de las cuales estó el código de homologación de los datos.
 #' Este código debe de estar contenido en las propiedades de las Features en mapjson. La segunda columna contiene
 #' los datos que se asignan a cada feature.
 #' @param jscode Es el nombre de la propiedad de las features con las que se homologa el código en datos.
+#' @param clic Es el nombre de una propidadad de las features que sera regresada en un input a Shiny. El nombre del input es rhm_clic
+#' @param perclic Parametro falso o verdadero, referente a permitir seleccion de submapas con clic
 #' @param mapname Nombre que se mostrara en los mapas.
 #' @param title Titulo del mapa.
 #' @param popcolor Color para resaltar mapa, en valor hexadecimal.
@@ -20,15 +22,15 @@
 #' @param elementId Identificador del elemento.
 #' @export
 
-rhm_base <- function(mapjson,datos, 
+rhm_base <- function(mapjson,datos,
                      jscode,
-                     #datcode="code",
-                     #keyvalue="value",
-                     mapname=jscode,
+                     clic=jscode,
+                     perclic=FALSE,
                      title="MAPA",
-                     popcolor='#a4edba',
+                     mapname=jscode,
                      mapcolor="#770eff",
                      dataname="Data",
+                     popcolor='#a4edba',
                      popname=jscode,
                      popvalue="value",
                      width = NULL, height = NULL, elementId = NULL) {
@@ -38,8 +40,8 @@ rhm_base <- function(mapjson,datos,
     mapjson= mapjson,
     data=RdataToJS(datos),
     jscode=jscode,
-    #datcode=datcode,
-    #keyvalue=keyvalue,
+    clic=clic,
+    perclic=perclic,
     mapcolor=mapcolor,
     mapname=mapname,
     title=title,

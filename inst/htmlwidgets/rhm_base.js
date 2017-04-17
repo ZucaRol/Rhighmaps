@@ -1,3 +1,4 @@
+
 HTMLWidgets.widget({
 
   name: 'rhm_base',
@@ -43,7 +44,7 @@ HTMLWidgets.widget({
             mapData: rmap,
             joinBy: [x.jscode, 'codeRHM'],
             keys: [x.jscode, 'value'],
-			allowPointSelect: true,
+			allowPointSelect: eval(x.perclic),
 			name: x.dataname,
             states: {
                 hover: {
@@ -66,7 +67,7 @@ HTMLWidgets.widget({
             var points = mapChart.getSelectedPoints();
 			console.log(points);
 			console.log(points[0].properties.state_name);
-			Shiny.onInputChange("mydata", points[0].properties.state_name);
+			Shiny.onInputChange("rhm_clic", eval('{points[0].properties.'+x.clic+'}'));
 	});
 
       },

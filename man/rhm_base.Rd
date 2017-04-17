@@ -4,29 +4,33 @@
 \alias{rhm_base}
 \title{<Rhm_Base>}
 \usage{
-rhm_base(mapjson, datos, jscode, mapname = jscode, title = "MAPA",
-  popcolor = "#a4edba", mapcolor = "#770eff", dataname = "Data",
-  popname = jscode, popvalue = "value", width = NULL, height = NULL,
-  elementId = NULL)
+rhm_base(mapjson, datos, jscode, clic = jscode, perclic = FALSE,
+  title = "MAPA", mapname = jscode, mapcolor = "#770eff",
+  dataname = "Data", popcolor = "#a4edba", popname = jscode,
+  popvalue = "value", width = NULL, height = NULL, elementId = NULL)
 }
 \arguments{
 \item{mapjson}{Una lista organizada en una FeatureColection frecuentemente proveniente de un mapa "json".}
 
-\item{datos}{Un data.frame de dos columnas. En la primera de las cuales estó el código de homologación de los datos. 
+\item{datos}{Un data.frame de dos columnas. En la primera de las cuales estó el código de homologación de los datos.
 Este código debe de estar contenido en las propiedades de las Features en mapjson. La segunda columna contiene
 los datos que se asignan a cada feature.}
 
 \item{jscode}{Es el nombre de la propiedad de las features con las que se homologa el código en datos.}
 
-\item{mapname}{Nombre que se mostrara en los mapas.}
+\item{clic}{Es el nombre de una propidadad de las features que sera regresada en un input a Shiny. El nombre del input es rhm_clic}
+
+\item{perclic}{Parametro falso o verdadero, referente a permitir seleccion de submapas con clic}
 
 \item{title}{Titulo del mapa.}
 
-\item{popcolor}{Color para resaltar mapa, en valor hexadecimal.}
+\item{mapname}{Nombre que se mostrara en los mapas.}
 
 \item{mapcolor}{Color general de mapa, en valor hexadecimal.}
 
 \item{dataname}{Nombre de la serie de datos.}
+
+\item{popcolor}{Color para resaltar mapa, en valor hexadecimal.}
 
 \item{popvalue}{Dato para mostrar en el pop.}
 
